@@ -2,11 +2,11 @@
 
 const helpers = require('./helpers')
 
-const text = 'Encrypt text'
-const privateKey = './publicKey.pem'
-const publicKey = './privateKey.pem'
+const text =  `Some secret text`
+const publicKey = helpers.readFile('./publicKey.pem')
+const privateKey = helpers.readFile('./privateKey.pem')
 
-const res = helpers.encryptStringWithRsaPublicKey(text, publicKey)
+const res = helpers.encryptStringToBase64(text, publicKey)
 console.log('res: ', res)
-const dec = helpers.decryptStringWithRsaPrivateKey(res, privateKey)
-console.log('dec: ', dec)
+const res2 = helpers.decryptBase64String(res, privateKey, 'top secret')
+console.log('res: ', res2)

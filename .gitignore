@@ -1,4 +1,7 @@
 # Logs
+keys
+*.pem
+
 logs
 *.log
 npm-debug.log*

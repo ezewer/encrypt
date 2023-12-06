@@ -1,6 +1,7 @@
 # Logs
 keys
 *.pem
+package-lock.json
 
 logs
 *.log
